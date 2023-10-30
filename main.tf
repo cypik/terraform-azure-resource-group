@@ -1,5 +1,5 @@
 module "labels" {
-  source      = "git::git@github.com:opz0/terraform-azure-labels.git?ref=master"
+  source      = "git::https://github.com/opz0/terraform-azure-labels.git?ref=v1.0.0"
   name        = var.name
   environment = var.environment
   managedby   = var.managedby
@@ -7,8 +7,7 @@ module "labels" {
   repository  = var.repository
 }
 
-#Description : Terraform resource for resource group.
-resource "azurerm_resource_group" "default" {
+resource "azurerm_resource_group" "rg" {
   count    = var.enabled ? 1 : 0
   name     = format("%s-resource-group", module.labels.id)
   location = var.location
@@ -22,10 +21,10 @@ resource "azurerm_resource_group" "default" {
   }
 }
 
-resource "azurerm_management_lock" "resource-group-level" {
+resource "azurerm_management_lock" "resource_group_level" {
   count      = var.enabled && var.resource_lock_enabled ? 1 : 0
   name       = format("%s-rg-lock", var.lock_level)
-  scope      = azurerm_resource_group.default.*.id[0]
+  scope      = join("", azurerm_resource_group.rg[*].id)
   lock_level = var.lock_level
   notes      = "This Resource Group is locked by terrafrom"
 }
