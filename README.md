@@ -54,7 +54,7 @@ You will be prompted to confirm the destruction of the resources. Enter yes to p
 If you would like to contribute to this project, please follow these guidelines for code contributions and issue reporting.
 
 # License
-This project is licensed under the MIT License - see the [_example/LICENSE.txt](https://github.com/opz0/terraform-azure-resource-group/blob/readme/_example/LICENSE.txt) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/opz0/terraform-azure-resource-group/blob/readme/LICENSE.txt) file for details.
 
 For more information on using Terraform with Azure, refer to the official [Terraform Azure provider documentation](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs).
 
