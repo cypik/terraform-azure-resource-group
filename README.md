@@ -19,15 +19,9 @@ This Terraform module creates an Azure Resource Group along with additional conf
 
 ## Usage
 
-1. Ensure you have the required provider configured in your Terraform environment.
 
-    ```hcl
-    provider "azurerm" {
-      features {}
-    }
-    ```
 
-2. Use the module by referencing its source and providing the required variables.
+1. Use the module by referencing its source and providing the required variables.
 
     ```hcl
     module "resource_group" {
@@ -41,7 +35,7 @@ This Terraform module creates an Azure Resource Group along with additional conf
     }
     ```
 
-3. Run `terraform init` and `terraform apply` to create the Azure Resource Group.
+2. Run `terraform init` and `terraform apply` to create the Azure Resource Group.
 
 ## Module Inputs
 
@@ -57,11 +51,14 @@ This Terraform module creates an Azure Resource Group along with additional conf
 
 
 ## Authors
-- [Your Name]
-- [Co-author's Name, if applicable]
+- This module was created by [Your Name] and can be found in [Your GitHub Repository URL].
+
+If you have any questions, issues, or suggestions related to this module, please feel free to open an issue on the repository.
+
+Happy Terraforming!
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/opz0/terraform-azure-resource-group/blob/readme/LICENSE) file for details.
+- This project is licensed under the MIT License - see the [LICENSE](https://github.com/opz0/terraform-azure-resource-group/blob/readme/LICENSE) file for details.
 
 
 
