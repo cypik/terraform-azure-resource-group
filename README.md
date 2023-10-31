@@ -25,7 +25,7 @@ This Terraform module creates an Azure Resource Group along with additional conf
 
     ```hcl
     module "resource_group" {
-      source      = "./../"  # Update with the correct path to the module
+      source      = "git::https://github.com/opz0/terraform-azure-resource-group.git?ref=v1.0.0"
       name        = "app"
       environment = "test"
       location    = "North Europe"
