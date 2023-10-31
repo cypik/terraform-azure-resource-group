@@ -1,61 +1,70 @@
 # terraform-azure-resource-group
-# Azure Resource Group Infrastructure with Terraform
+# Terraform Infrastructure as Code (IaC) - Azure Resource Group Module
 
-This repository contains Terraform code to provision a resource group in Microsoft Azure. The resource group is designed to support an application environment for testing purposes.
+## Table of Contents
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Usage](#usage)
+- [Module Inputs](#module-inputs)
+- [Module Outputs](#module-outputs)
+- [Contributing](#contributing)
+- [Authors](#authors)
+- [License](#license)
+
+## Overview
+This Terraform module creates an Azure Resource Group along with additional configuration options.
 
 ## Prerequisites
+- [Terraform](https://www.terraform.io/downloads.html) installed
+- Azure subscription and credentials set up
 
-Before you begin, ensure you have the following requirements in place:
+## Usage
 
-- [Terraform](https://www.terraform.io/) installed on your local machine.
-- An Azure subscription with the necessary permissions and credentials.
+1. Ensure you have the required provider configured in your Terraform environment.
 
-## Getting Started
+    ```hcl
+    provider "azurerm" {
+      features {}
+    }
+    ```
 
-1. Clone this repository to your local machine:
+2. Use the module by referencing its source and providing the required variables.
 
-   ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
-1. Initialize your Terraform workspace:
+    ```hcl
+    module "resource_group" {
+      source      = "./../"  # Update with the correct path to the module
+      name        = "app"
+      environment = "test"
+      location    = "North Europe"
 
-  ```bash
-   terraform init
-```
-2. Review and customize the 'terraform.tfvars' file if necessary to set variables such as the resource group name, environment, location, and other settings.
+      resource_lock_enabled = true
+      lock_level            = "CanNotDelete"
+    }
+    ```
 
-3. Deploy the infrastructure by running:
-  ```bash
-terraform apply
-```
-You will be prompted to confirm the changes. Enter yes to proceed.
+3. Run `terraform init` and `terraform apply` to create the Azure Resource Group.
 
-4. Once the Terraform apply process is complete, your Azure resource group and associated configurations will be provisioned.
+## Module Inputs
 
-# Configuration
-The Terraform code in this repository uses the following configurations:
+- `name`: The name of the resource group.
+- `environment`: The environment (e.g., "test", "production").
+- `location`: The Azure region for the resource group.
+- `resource_lock_enabled`: Enable or disable resource lock (true/false).
+- `lock_level`: The lock level (e.g., "CanNotDelete").
 
-- Azure Location: North Europe
-- Resource Group Name: app
-- Environment: test
-- Resource Lock Enabled: true
-- Lock Level: CanNotDelete
-You can modify these values in the terraform.tfvars file if necessary.
+## Module Outputs
 
-# Cleanup
-To destroy the provisioned Azure resource group and associated resources, run:
+- This module currently does not provide any outputs.
 
-   ```bash
-terraform destroy
-```
-You will be prompted to confirm the destruction of the resources. Enter yes to proceed.
+## Contributing
+Feel free to contribute by opening issues or submitting pull requests. Your feedback and collaboration are welcome!
 
-# Contributing
-If you would like to contribute to this project, please follow these guidelines for code contributions and issue reporting.
+## Authors
+- [Your Name]
+- [Co-author's Name, if applicable]
 
-# License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/opz0/terraform-azure-resource-group/blob/readme/LICENSE.txt) file for details.
+## License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/opz0/terraform-azure-resource-group/blob/readme/LICENSE) file for details.
 
-For more information on using Terraform with Azure, refer to the official [Terraform Azure provider documentation](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs).
 
-Feel free to enhance this README with more details or relevant information about your project.
+
