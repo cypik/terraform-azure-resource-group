@@ -2,16 +2,15 @@
 # Terraform Infrastructure as Code (IaC) - Azure Resource Group Module
 
 ## Table of Contents
-- [Overview](#overview)
+- [Introduction](#Introduction)
 - [Prerequisites](#prerequisites)
 - [Usage](#usage)
 - [Module Inputs](#module-inputs)
 - [Module Outputs](#module-outputs)
-- [Contributing](#contributing)
 - [Authors](#authors)
 - [License](#license)
 
-## Overview
+## Introduction
 This Terraform module creates an Azure Resource Group along with additional configuration options.
 
 ## Prerequisites
@@ -56,8 +55,6 @@ This Terraform module creates an Azure Resource Group along with additional conf
 
 - This module currently does not provide any outputs.
 
-## Contributing
-Feel free to contribute by opening issues or submitting pull requests. Your feedback and collaboration are welcome!
 
 ## Authors
 - [Your Name]
