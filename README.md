@@ -50,7 +50,7 @@ This Terraform module creates an Azure Resource Group along with additional conf
 - This module currently does not provide any outputs.
 
 ## Examples
-For detailed examples on how to use this module, please refer to the '[example](https://github.com/cypik/terraform-azure-resource-group/blob/master/example)' directory within this repository.
+For detailed examples on how to use this module, please refer to the '[example](https://github.com/cypik/terraform-azure-resource-group/blob/master/_example)' directory within this repository.
 
 ## Authors
 - This module was created by [Your Name] and can be found in [Your GitHub Repository URL].
