@@ -25,7 +25,7 @@ This Terraform module creates an Azure Resource Group along with additional conf
 
     ```hcl
     module "resource_group" {
-      source      = "git::https://github.com/opz0/terraform-azure-resource-group.git?ref=v1.0.0"
+      source      = "git::https://github.com/cypik/terraform-azure-resource-group.git?ref=v1.0.0"
       name        = "app"
       environment = "test"
       location    = "North Europe"
@@ -58,7 +58,7 @@ If you have any questions, issues, or suggestions related to this module, please
 Happy Terraforming!
 
 ## License
-- This project is licensed under the MIT License - see the [LICENSE](https://github.com/opz0/terraform-azure-resource-group/blob/readme/LICENSE) file for details.
+- This project is licensed under the MIT License - see the [LICENSE](https://github.com/cypik/terraform-azure-resource-group/blob/master/LICENSE) file for details.
 
 
 
