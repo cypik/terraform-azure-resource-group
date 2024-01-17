@@ -1,6 +1,6 @@
-# Terraform-azure-Resource Group
+# Terraform-azure-resource group
 
-# Terraform azure Cloud Resource Group Module
+# Terraform Azure Cloud Resource Group Module
 
 ## Table of Contents
 - [Introduction](#introduction)
