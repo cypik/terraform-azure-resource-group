@@ -17,3 +17,8 @@ output "tags" {
   value       = module.resource_group.tags
   description = "A mapping of tags which should be assigned to the Resource Group."
 }
+
+output "managed_by_resource_group" {
+  value       = module.resource_group.managed_by_resource_group
+  description = "The managed_by property of the Azure Resource Group. This indicates the resource manager responsible for the resource group."
+}

@@ -6,7 +6,7 @@ variable "name" {
 
 variable "repository" {
   type        = string
-  default     = "https://github.com/cypik/terraform-azure-resource-group.git"
+  default     = "https://github.com/cypik/terraform-azure-resource-group"
   description = "Terraform current module repo"
 }
 
@@ -24,8 +24,8 @@ variable "label_order" {
 
 variable "managedby" {
   type        = string
-  default     = "cypik"
-  description = "ManagedBy, eg 'cypik'."
+  default     = "info@cypik.com"
+  description = "ManagedBy, eg 'info@cypik.com'"
 }
 
 variable "enabled" {
@@ -73,4 +73,10 @@ variable "resource_lock_enabled" {
 variable "lock_level" {
   type    = string
   default = "CanNotDelete"
+}
+
+variable "managed_by-resource_group" {
+  type        = string
+  default     = null
+  description = "The ID of the resource or application that manages this Resource Group."
 }
