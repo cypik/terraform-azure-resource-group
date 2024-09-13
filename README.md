@@ -65,7 +65,7 @@ Replace **MIT** and **Cypik** with the appropriate license and your information.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | cypik/labels/azure | 1.0.1 |
+| <a name="module_labels"></a> [labels](#module\_labels) | cypik/labels/azure | 1.0.2 |
 
 ## Resources
 
