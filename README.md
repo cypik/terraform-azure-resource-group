@@ -90,6 +90,7 @@ Replace **MIT** and **Cypik** with the appropriate license and your information.
 | <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | <a name="input_read"></a> [read](#input\_read) | Used when retrieving the Resource Group. | `string` | `"5m"` | no |
 | <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/cypik/terraform-azure-resource-group"` | no |
+| <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource group name. If not provided, it will use the formatted name. | `string` | `null` | no |
 | <a name="input_resource_lock_enabled"></a> [resource\_lock\_enabled](#input\_resource\_lock\_enabled) | enable or disable lock resource | `bool` | `false` | no |
 | <a name="input_update"></a> [update](#input\_update) | Used when updating the Resource Group. | `string` | `"90m"` | no |
 

@@ -46,6 +46,12 @@ variable "location" {
   description = "Location where resource should be created."
 }
 
+variable "resource_group_name" {
+  type        = string
+  default     = null
+  description = "Resource group name. If not provided, it will use the formatted name."
+}
+
 variable "create" {
   type        = string
   default     = "90m"
@@ -86,3 +92,4 @@ variable "managed_by_resource_group" {
   default     = null
   description = "The ID of the resource or application that manages this Resource Group."
 }
+
