@@ -3,11 +3,10 @@ provider "azurerm" {
 }
 
 module "resource_group" {
-  source                    = "./../"
-  name                      = "app"
-  managed_by_resource_group = null
-  environment               = "test"
-  location                  = "North Europe"
-  resource_lock_enabled     = false
-  lock_level                = "CanNotDelete"
+  source                = "./../"
+  name                  = "app"
+  environment           = "test"
+  location              = "North Europe"
+  resource_lock_enabled = false
+  lock_level            = "CanNotDelete"
 }

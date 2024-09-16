@@ -28,7 +28,6 @@ Use the module by referencing its source and providing the required variables.
       environment               = "test"
       location                  = "North Europe"
       resource_lock_enabled     = false
-      managed_by_resource_group = null
       lock_level                = "CanNotDelete"
 }
 ```
