@@ -22,14 +22,14 @@ Use the module by referencing its source and providing the required variables.
 
 ```hcl
     module "resource_group" {
-      source                = "cypik/resource-group/azure"
-      version               = "1.0.2"
-      name                  = "app"
-      environment           = "test"
-      location              = "North Europe"
-      resource_lock_enabled = false
-      resource_lock_enabled = false
-      lock_level            = "CanNotDelete"
+      source                    = "cypik/resource-group/azure"
+      version                   = "1.0.2"
+      name                      = "app"
+      environment               = "test"
+      location                  = "North Europe"
+      resource_lock_enabled     = false
+      managed_by_resource_group = null
+      lock_level                = "CanNotDelete"
 }
 ```
 
@@ -82,10 +82,11 @@ Replace **MIT** and **Cypik** with the appropriate license and your information.
 | <a name="input_delete"></a> [delete](#input\_delete) | Used when deleting the Resource Group. | `string` | `"90m"` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Flag to control the module creation. | `bool` | `true` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
+| <a name="input_extra_tags"></a> [extra\_tags](#input\_extra\_tags) | Additional tags (e.g. map(`BusinessUnit`,`XYZ`). | `map(string)` | `{}` | no |
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. `name`,`application`. | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
 | <a name="input_location"></a> [location](#input\_location) | Location where resource should be created. | `string` | `""` | no |
 | <a name="input_lock_level"></a> [lock\_level](#input\_lock\_level) | n/a | `string` | `"CanNotDelete"` | no |
-| <a name="input_managed_by-resource_group"></a> [managed\_by-resource\_group](#input\_managed\_by-resource\_group) | The ID of the resource or application that manages this Resource Group. | `string` | `null` | no |
+| <a name="input_managed_by_resource_group"></a> [managed\_by\_resource\_group](#input\_managed\_by\_resource\_group) | The ID of the resource or application that manages this Resource Group. | `string` | `null` | no |
 | <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'info@cypik.com' | `string` | `"info@cypik.com"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | <a name="input_read"></a> [read](#input\_read) | Used when retrieving the Resource Group. | `string` | `"5m"` | no |

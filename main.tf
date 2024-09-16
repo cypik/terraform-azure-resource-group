@@ -6,13 +6,14 @@ module "labels" {
   managedby   = var.managedby
   label_order = var.label_order
   repository  = var.repository
+  extra_tags  = var.extra_tags
 }
 
 resource "azurerm_resource_group" "rg" {
   count      = var.enabled ? 1 : 0
   name       = format("%s-resource-group", module.labels.id)
   location   = var.location
-  managed_by = var.managed_by-resource_group
+  managed_by = var.managed_by_resource_group
   tags       = module.labels.tags
 
   timeouts {

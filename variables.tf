@@ -22,6 +22,12 @@ variable "label_order" {
   description = "Label order, e.g. `name`,`application`."
 }
 
+variable "extra_tags" {
+  type        = map(string)
+  default     = {}
+  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
+}
+
 variable "managedby" {
   type        = string
   default     = "info@cypik.com"
@@ -75,7 +81,7 @@ variable "lock_level" {
   default = "CanNotDelete"
 }
 
-variable "managed_by-resource_group" {
+variable "managed_by_resource_group" {
   type        = string
   default     = null
   description = "The ID of the resource or application that manages this Resource Group."
