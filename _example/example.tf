@@ -7,6 +7,6 @@ module "resource_group" {
   name                  = "app"
   environment           = "test"
   location              = "North Europe"
-  resource_lock_enabled = true
+  resource_lock_enabled = false
   lock_level            = "CanNotDelete"
 }

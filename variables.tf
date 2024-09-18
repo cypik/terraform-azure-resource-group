@@ -6,7 +6,7 @@ variable "name" {
 
 variable "repository" {
   type        = string
-  default     = "https://github.com/cypik/terraform-azure-resource-group.git"
+  default     = "https://github.com/cypik/terraform-azure-resource-group"
   description = "Terraform current module repo"
 }
 
@@ -22,10 +22,16 @@ variable "label_order" {
   description = "Label order, e.g. `name`,`application`."
 }
 
+variable "extra_tags" {
+  type        = map(string)
+  default     = {}
+  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
+}
+
 variable "managedby" {
   type        = string
-  default     = "cypik"
-  description = "ManagedBy, eg 'cypik'."
+  default     = "info@cypik.com"
+  description = "ManagedBy, eg 'info@cypik.com'"
 }
 
 variable "enabled" {
@@ -38,6 +44,12 @@ variable "location" {
   type        = string
   default     = ""
   description = "Location where resource should be created."
+}
+
+variable "resource_group_name" {
+  type        = string
+  default     = null
+  description = "Resource group name. If not provided, it will use the formatted name."
 }
 
 variable "create" {
@@ -74,3 +86,10 @@ variable "lock_level" {
   type    = string
   default = "CanNotDelete"
 }
+
+variable "managed_by_resource_group" {
+  type        = string
+  default     = null
+  description = "The ID of the resource or application that manages this Resource Group."
+}
+

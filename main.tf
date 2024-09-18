@@ -1,18 +1,20 @@
 module "labels" {
   source      = "cypik/labels/azure"
-  version     = "1.0.1"
+  version     = "1.0.2"
   name        = var.name
   environment = var.environment
   managedby   = var.managedby
   label_order = var.label_order
   repository  = var.repository
+  extra_tags  = var.extra_tags
 }
 
 resource "azurerm_resource_group" "rg" {
-  count    = var.enabled ? 1 : 0
-  name     = format("%s-resource-group", module.labels.id)
-  location = var.location
-  tags     = module.labels.tags
+  count      = var.enabled ? 1 : 0
+  name       = var.resource_group_name != null ? var.resource_group_name : format("%s-resource-group", module.labels.id)
+  location   = var.location
+  managed_by = var.managed_by_resource_group
+  tags       = module.labels.tags
 
   timeouts {
     create = var.create
